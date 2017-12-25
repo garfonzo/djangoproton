@@ -1,0 +1,2 @@
+def deploy():
+    print('deploy')

@@ -1,5 +1,7 @@
-# Remove Arbitrary Files
+#### Remove Arbitrary Files
 *.DS_Store
 .vscode/
 venv/
 .env
+**/__pycache__
+*/__pycache__

@@ -27,6 +27,6 @@ DRIVERS = {
     'heroku': {
         'username': 'username',
         'password': 'password',
-        'app': 'Django Proton'
+        'app': 'DjangoProton'
     }
 }
