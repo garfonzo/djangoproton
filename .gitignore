@@ -1,1 +1,4 @@
+# Remove Arbitrary Files
 *.DS_Store
+.vscode/
+venv/
