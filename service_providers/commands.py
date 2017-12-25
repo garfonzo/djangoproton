@@ -2,7 +2,6 @@
 
 import subprocess
 import sys
-import os
 from djangoproton.proton_settings import deployment
 
 def deploy():
