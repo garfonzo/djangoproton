@@ -27,7 +27,7 @@ SECRET_KEY = 'gv$#7gh0o7!zflr+n7q#7ff&(0(v#qvgc1wk&41_4yjhqzhf11'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Add deployment hosts
 ALLOWED_HOSTS += deployment.DRIVERS[deployment.DEFAULT]['hosts']
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sass_processor'
 ]
 
 MIDDLEWARE = [
@@ -124,9 +125,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "djangoproton/staticfiles"),
+    # Compiled Assets
+    STATIC_ROOT + '/compiled'
 ]
 
-# # Configure Django App for Heroku.
-# import django_heroku
-# django_heroku.settings(locals())
+## SASS Settings
+SASS_PROCESSOR_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles/compiled')
