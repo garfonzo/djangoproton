@@ -122,7 +122,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "djangoproton/staticfiles"),
-    '/var/www/static/',
 ]
 
 # # Configure Django App for Heroku.
