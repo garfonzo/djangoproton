@@ -25,8 +25,6 @@ DEFAULT = 'heroku'
 
 DRIVERS = {
     'heroku': {
-        'username': 'username',
-        'password': 'password',
         'app': 'DjangoProton',
         'hosts': [
             'djangoproton.herokuapp.com'
