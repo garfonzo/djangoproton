@@ -13,14 +13,23 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 
 """
-|
++----------------------------------------
 | Proton Settings
-+--------------------
++----------------------------------------
 | In addition to all the standard settings, Proton adds a bunch of 
 | extra settings to keep everything in good working order. 
-| Do not remove this next line!
+| Do not remove these next few Proton-specific lines!
 """
+
 from proton.settings import *
+from proton.settings.base import PROTON_INSTALLED_APPS, PROTON_MIDDLEWARE
+
+"""
++----------------------------------------
+| End of Proton specific setting imports
++----------------------------------------
+|
+"""
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -49,6 +58,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+"""
++----------------------------------------
+| Proton Installed Apps
++----------------------------------------
+| Here we tag on the apps that Proton has added
+| This may need to be changed from an 'extend' to more of a direct import as the order of the apps may be important
+| Perhaps loop over the Proton Installed apps, and insert them each at position 5 (after the defaults)
+|
+"""
+
+INSTALLED_APPS.extend(PROTON_INSTALLED_APPS)
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
