@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: proton
+Version: 0.0.1
+Summary: A command line tool for managing Django projects built with Proton.
+Home-page: https://github.com/garfonzo/djangoproton
+Author: garfonzo
+Author-email: garfonzo@gmail.com
+License: UNLICENSE
+Description-Content-Type: UNKNOWN
+Description: # Proton CLI
+        
+        This is where the CLI will be built. For now, it will be part of the Django project, but eventually will be separated out to its own repo
+Keywords: cli
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Utilities
+Classifier: License :: Public Domain
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
