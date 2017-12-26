@@ -22,7 +22,7 @@ import os
 """
 
 from proton.settings import *
-from proton.settings.base import PROTON_INSTALLED_APPS, PROTON_MIDDLEWARE
+from proton.settings.base import PROTON_INSTALLED_APPS, PROTON_MIDDLEWARE, PROJECT_PATH
 
 """
 +----------------------------------------
@@ -35,7 +35,8 @@ from proton.settings.base import PROTON_INSTALLED_APPS, PROTON_MIDDLEWARE
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# PROJECT_PATH is defined in 'proton/base.py'
+BASE_DIR = PROJECT_PATH
 
 
 # Quick-start development settings - unsuitable for production
@@ -89,7 +90,9 @@ ROOT_URLCONF = 'djangoproton.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(PROJECT_PATH, 'templates/')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
