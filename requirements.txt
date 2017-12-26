@@ -1,0 +1,8 @@
+django==2.0
+python-dotenv==0.7.1
+gunicorn==19.7.1
+
+# SASS requirements
+libsass==0.13.4
+django-sass-processor==0.5.7
+django-compressor==2.2
