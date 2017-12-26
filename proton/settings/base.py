@@ -34,3 +34,16 @@ SASS_PROCESSOR_INCLUDE_DIRS = [
   os.path.join(PROJECT_PATH, 'proton/bootstrap/scss'),
 ]
 
+"""
++----------------------------------------
+| Static Files
++----------------------------------------
+| Telling Django to also look in our Proton
+| folder for static files --> /bootstrap
+|
+"""
+
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_PATH, "static"),
+    os.path.join(PROJECT_PATH, "proton/bootstrap/"),
+]

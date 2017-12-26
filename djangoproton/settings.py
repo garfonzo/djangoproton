@@ -144,5 +144,22 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
+"""
++----------------------------------------
+| Static Files
++----------------------------------------
+| Telling Django to also look in our Proton
+| folder for static files --> /bootstrap
+|
+"""
 
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_PATH, "static"),
+    os.path.join(PROJECT_PATH, "proton/bootstrap/"),
+]
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'staticfiles')
+STATICFILES_FINDERS = [
+  'django.contrib.staticfiles.finders.FileSystemFinder',
+  'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
