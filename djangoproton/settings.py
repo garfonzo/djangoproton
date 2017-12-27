@@ -22,7 +22,7 @@ import os
 """
 
 from proton.settings import *
-from proton.settings.base import PROTON_INSTALLED_APPS, PROTON_MIDDLEWARE, PROJECT_PATH
+from proton.settings.base import * # PROTON_INSTALLED_APPS, PROTON_MIDDLEWARE, PROJECT_PATH
 
 """
 +----------------------------------------
@@ -35,8 +35,8 @@ from proton.settings.base import PROTON_INSTALLED_APPS, PROTON_MIDDLEWARE, PROJE
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-# PROJECT_PATH is defined in 'proton/base.py'
-BASE_DIR = PROJECT_PATH
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -88,21 +88,21 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'djangoproton.urls'
 
 TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(PROJECT_PATH, 'templates/')
-        ],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
+  {
+      'BACKEND': 'django.template.backends.django.DjangoTemplates',
+      'DIRS': [
+          os.path.join(BASE_DIR, 'proton/templates/'),
+      ],
+      'APP_DIRS': True,
+      'OPTIONS': {
+          'context_processors': [
+              'django.template.context_processors.debug',
+              'django.template.context_processors.request',
+              'django.contrib.auth.context_processors.auth',
+              'django.contrib.messages.context_processors.messages',
+          ],
+      },
+  },
 ]
 
 WSGI_APPLICATION = 'djangoproton.wsgi.application'
@@ -113,18 +113,18 @@ WSGI_APPLICATION = 'djangoproton.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+  {
+    'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+  },
 ]
 
 
@@ -142,6 +142,28 @@ USE_L10N = True
 USE_TZ = True
 
 
+
+
+"""
++----------------------------------------
+| Sass Settings
++----------------------------------------
+| This section outlines the settings for the
+| django-sass-processor
+|
+"""
+
+SASS_PROCESSOR_ROOT = [ os.path.join(BASE_DIR, 'proton/bootstrap/dist/css') ]
+SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r'^.+\.scss$'
+SASS_OUTPUT_STYLE = 'compact'
+SASS_PRECISION = 8
+
+SASS_PROCESSOR_INCLUDE_DIRS = [
+  os.path.join(BASE_DIR, 'proton/bootstrap/scss'),
+]
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 """
@@ -154,11 +176,10 @@ USE_TZ = True
 """
 
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_PATH, "static"),
-    os.path.join(PROJECT_PATH, "proton/bootstrap/"),
+  os.path.join(BASE_DIR, "proton/bootstrap/"),
 ]
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_PATH, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_FINDERS = [
   'django.contrib.staticfiles.finders.FileSystemFinder',
   'django.contrib.staticfiles.finders.AppDirectoriesFinder',

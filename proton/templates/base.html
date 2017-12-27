@@ -1,13 +1,34 @@
-<html>
-	{% load static %}
-	<link rel="stylesheet" href="{% static 'dist/css/bootstrap.css' %}">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<body>
+    <title>Proton</title>
 
-		<!-- All your content goes in this content block -->
-		{% block content %}
-		{% endblock %}
-		<!-- End Content Block -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dist/css/bootstrap.css' %}">
 
-	</body>
+  </head>
+
+  <!--
+  We add a padding to the top of the body element to allow for the nav bar.
+  Feel free to remove that style element if you do not need a navbar
+  -->
+  <body style='padding-top: 3rem;'>
+
+    {% include 'nav.html' %}
+
+    <!-- All your content goes in this content block -->
+    {% block content %}
+    {% endblock %}
+    <!-- End Content Block -->
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
+  </body>
 </html>
