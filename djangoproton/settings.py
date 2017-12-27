@@ -175,12 +175,13 @@ SASS_PROCESSOR_INCLUDE_DIRS = [
 |
 """
 
-STATICFILES_DIRS = [
-  os.path.join(BASE_DIR, "proton/bootstrap/"),
-]
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_FINDERS = [
   'django.contrib.staticfiles.finders.FileSystemFinder',
   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+STATICFILES_DIRS = [
+  os.path.join(BASE_DIR, "proton/bootstrap/"),
+  os.path.join(BASE_DIR, "djangoproton/static/"),
+]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
