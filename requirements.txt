@@ -1,6 +1,6 @@
 attrs==17.3.0
 coverage==4.4.2
-Django==2.0
+Django==2.2.10
 django-appconf==1.0.2
 django-compressor==2.2
 django-sass-processor==0.5.7
